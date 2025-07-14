@@ -17,7 +17,7 @@
         <input type="checkbox" value="remember"> <label>ingatkan saya</label> <br>
         <input type="submit">
     </form>
-    <p>Belum punya akun? <a href=register.html>Daftar</a></p>
+    <p>Belum punya akun? <a href=register.php>Daftar</a></p>
 </body>
 
 </html>

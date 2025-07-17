@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['login'])) 
+{
+    header("Location: datamahasiswa.php");
+    exit();
+}
 $koneksi = mysqli_connect("localhost", "root", "", "Informatik");
 if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());

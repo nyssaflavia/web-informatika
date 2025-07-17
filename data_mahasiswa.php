@@ -1,9 +1,12 @@
 <?php
+session_start();
+
+if (!$_SESSION['login']) {
+    header("Location: login.php");
+    exit();
+}
 
 require 'function.php';
-
-
-
 $query = "SELECT * FROM mahasiswa";
 $mhs = tampildata($query);
 // File: datamahasiswa.php
@@ -30,8 +33,8 @@ $i = 1;
 
 ?>
 <br>
-<a href = "tambah_data.php"<button style= "background- color: blue;" 
-cursor: pointer; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Tambah Data</button></a>
+<a href="tambah_data.php"> <button style="background-color: blue; cursor: pointer; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Tambah Data</button></a>
+<a href="logout.php"> <button style="background-color: red; cursor: pointer; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Logout</button></a>
 <table border="1" cellpadding="10" cellspacing="0" style="margin-top: 20px;">
     <thead>
         <th>No</th>
@@ -50,7 +53,7 @@ cursor: pointer; color: white; padding: 10px 20px; border: none; border-radius: 
                 <td><?= $mhs['nama']; ?></td>
                 <td><?= $mhs['jurusan']; ?></td>
                 <td><?= $mhs['alamat']; ?></td>
-                <td><img width="100" src="<?= './img/'. $mhs['foto']; ?>" alt="<?= 'Foto ' . $mhs['nama']; ?>"></td>
+                <td><img width="100" src="<?= './img/' . $mhs['foto']; ?>" alt="<?= 'Foto ' . $mhs['nama']; ?>"></td>
                 <td>
                     <a href="edit_data.php?id=<?= $mhs['id']; ?>">
                         <button>Edit</button>
@@ -64,8 +67,3 @@ cursor: pointer; color: white; padding: 10px 20px; border: none; border-radius: 
         <?php endforeach; ?>
     </tbody>
 </table>
-
-
-
-
-

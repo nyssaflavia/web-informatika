@@ -36,9 +36,7 @@ if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['password'
 </head>
 
 <body>
-    <style>
 
-    </style>
     <div class="container-fluid login-page vh-100">
         <div class="container pt-5">
             <div class="card mb-3 bg-primary text-white">
@@ -73,6 +71,8 @@ if (isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['password'
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-light">Submit</button>
+                            <a href="login.php" class="text-white ms-3">Login</a>
+                        </div>
                     </form>
                 </div>
             </div>
